@@ -1,0 +1,13 @@
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15-stretch-browser
+    working_directory: ~/project/
+  steps:
+    - checkout
+    - run:
+      name: 'install'
+      command: npm install
+    - run:
+      name: 'Push to UXPin'
+      command: ./node_modules/@uxpin/merge-cli --webpack-config ./webpack.uxpin.config.js --wrapper ./tools/UXPinWrapper.js
