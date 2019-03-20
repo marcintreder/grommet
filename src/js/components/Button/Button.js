@@ -158,6 +158,3 @@ const ButtonWrapper = compose(
 )(ButtonDoc || Button);
 
 export { ButtonWrapper as Button };
-
-/* Export Default for UXPin Merge */
-export default Button;
